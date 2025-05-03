@@ -1,0 +1,135 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* .content-section {
+    display: none; 
+  } */
+
+  .flash-msg{
+    text-align: right;
+    margin: 0;
+   
+  }
+  
+.alert{
+  color: #3e2723 ;
+}
+
+.alert-success{
+  background:none !important ;
+  border-color: #3e2723;
+  border-top: none;
+  /* width: 50%; */
+}
+
+  #blog{
+    display: block;
+  }
+
+  .content-section.active{
+    display: block;
+  }
+
+  /* Navbar Styling */
+  .navbar{
+    background-color:#d7b899;
+    
+  }
+  .navbar-brand{
+    color: #3e2723 !important;
+  }
+
+  .nav-link.active {
+    background-color: #3e2723 !important; /* Coffee color */
+    color: white;
+  }
+
+  .nav-link:hover {
+    background-color: #3e2723 !important; /* Coffee color */
+    color: white;
+  }
+
+  .menu-color{
+    background-color: #d7b899!important;
+    color: #3e2723 !important;
+  };
+
+  /* Button Styling */
+  .btn-primary{
+    background-color: #3e2723 !important;
+    border: none !important;
+  }
+
+  /* Delete Button */
+  .btn-danger{
+    background-color:#d7b899;
+    border: none !important;
+    color: #3e2723 !important;
+  }
+
+  /* Sidebar Styling */
+  .sidebar {
+    background-color: #3e2723; 
+    color: #d7b899;
+    height: 100vh; 
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 250px; 
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1;
+  }
+  
+  .sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar a:hover {
+    background-color: #d7b899; 
+    color:#3e2723 ;
+  }
+
+  /* number of books */
+  .glass-input:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #3e2723; /* Optional: Change border color */
+  }
+  
+  /* Main Content Styling */
+  .main-content {
+    margin-left: 250px; 
+    padding: 20px;
+    transition: margin-left 0.3s;
+  }
+  
+  .text-border {
+    border: #3e2723 1px solid;
+    border-radius: 5px;
+  }
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%; 
+      position: static; 
+      height: auto; 
+      margin-bottom: 20px;
+    }
+  
+    .main-content {
+      margin-left: 0; /* Remove offset for sidebar */
+    }
+  }

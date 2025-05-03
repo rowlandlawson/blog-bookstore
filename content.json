@@ -1,0 +1,112 @@
+{
+  "hero": {
+    "title": "Welcome to Our Blog",
+    "subtitle": "Stay updated with our latest posts"
+  },
+  "intro": {
+    "content": "Egestas gravida erat enim ac morbi at malesuada arcu habitant blandit pulvinar tellus consectetur mi at suscipit sit sit pulvinar amet convallis imperdiet pretium... hello roew"
+  },
+  "about": {
+    "authorsName": "rowland",
+    "content": "Diam, urna, ornare leo facilisis suspendisse eu rutrum...",
+    "stats": {
+      "booksPublished": 6,
+      "bestSellers": 0,
+      "blogsPosted": 3
+    }
+  },
+  "books": [
+    {
+      "id": 1744209267492,
+      "title": "hello dexta",
+      "description": "kjalkjd",
+      "price": "1500",
+      "coverImage": "/uploads/1744209267465-april.jpg",
+      "createdAt": "2025-04-09T14:34:27.492Z"
+    },
+    {
+      "id": 1744209305271,
+      "title": "hello",
+      "description": "kldskl",
+      "price": "2000",
+      "coverImage": "/uploads/1744209305256-april.jpg",
+      "createdAt": "2025-04-09T14:35:05.271Z"
+    },
+    {
+      "id": 1744211366015,
+      "title": "dd",
+      "description": "SDsd",
+      "price": "D",
+      "coverImage": null,
+      "createdAt": "2025-04-09T15:09:26.015Z"
+    },
+    {
+      "id": 1744211382413,
+      "title": "das",
+      "description": "DS",
+      "price": "sd",
+      "coverImage": null,
+      "createdAt": "2025-04-09T15:09:42.413Z"
+    },
+    {
+      "id": 1744211422206,
+      "title": "hell rowland",
+      "description": "hello",
+      "price": "4000",
+      "coverImage": "/uploads/1744211422183-april.jpg",
+      "createdAt": "2025-04-09T15:10:22.206Z"
+    },
+    {
+      "id": 1744285358051,
+      "title": "rowland",
+      "description": "coding",
+      "price": "1500",
+      "coverImage": null,
+      "createdAt": "2025-04-10T11:42:38.051Z"
+    }
+  ],
+  "typewriter": {
+    "quotes": [
+      "Creativity is intelligence having fun.",
+      "Make it work, then make it better.",
+      "Code is like humor. When you have to explain it, it’s bad."
+    ]
+  },
+  "typewriterQuotes": [
+    {
+      "id": 1744203636858,
+      "text": "hello\r\n"
+    },
+    {
+      "id": 1744203650619,
+      "text": "laklk"
+    }
+  ],
+  "quotes": [
+    {
+      "id": "1744216317014",
+      "text": "hello dexta",
+      "createdAt": "2025-04-09T16:31:57.014Z"
+    },
+    {
+      "id": "1744216595510",
+      "text": "hello rowland",
+      "createdAt": "2025-04-09T16:36:35.510Z"
+    },
+    {
+      "id": "1744216953281",
+      "text": "hell",
+      "createdAt": "2025-04-09T16:42:33.281Z"
+    },
+    {
+      "id": "1744216962597",
+      "text": "sfda",
+      "createdAt": "2025-04-09T16:42:42.597Z"
+    },
+    {
+      "id": "1744216968724",
+      "text": "asdfafaqwqetwq",
+      "createdAt": "2025-04-09T16:42:48.724Z"
+    }
+  ]
+}

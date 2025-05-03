@@ -1,0 +1,627 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* HERO SECTION */
+.hero {
+  position: relative;
+}
+
+.hero-l-content h1,
+.hero-l-content p,
+.hero-l-content .hero-btn {
+  opacity: 1;
+  transform: translateY(50px);
+}
+
+.hero-l-content .animate__animated.animate__fadeInLeft,
+.hero-l-content .animate__animated.animate__fadeInUp {
+  animation-duration: 4s;
+}
+
+.hero-l-content .animate__fadeInLeft {
+  animation-name: fadeInLeft;
+}
+
+.hero-l-content .animate__fadeInUp {
+  animation-name: fadeInUp ;
+}
+
+
+
+
+
+
+/* Social Media Icons */
+.social-media-icon {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-media-icon a {
+  display: inline-block;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+
+.hero-l{
+    background-color: #ccc;
+    height: 100vh;
+}
+
+.hero-r {
+    background-image: url('/img/coffee.jpg');
+    background-size: cover;  
+    height: 100vh;
+    position: relative; 
+  }
+
+/* .hero-r ::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2); 
+        z-index: 10;
+        cursor: pointer; 
+} */
+.hero-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid rgb(59, 28, 17);
+    color: rgb(59, 28, 17);
+    background-color: transparent;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 2rem;
+  }
+  
+  .hero-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(59, 28, 17, 0.3);
+    transition: left 0.3s ease;
+    z-index: 0;
+  }
+  
+  .hero-btn:hover::before {
+    left: 0;
+    color: rgba(59, 28, 17, 0.3);
+  }
+  
+  .hero-btn:hover {
+    color: rgba(59, 28, 17, 1);
+  }
+  
+  .hero-btn span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-l-content{
+    line-height: 1.5rem;
+    width: 600px;
+  }
+
+  .hero-l-content h1{
+    font-size: 4rem;
+    font-weight: bolder;
+  }
+
+  .hero-l-content p{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color:#696969 ;
+    margin-top: 2rem;
+  }
+  
+
+.social-media-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; 
+}
+
+.social-media-icon .icon {
+  width: 23px;
+  height: 23px;
+  transition: transform 0.5s ease; 
+}
+
+.social-media-icon .icon:hover {
+  transform: scale(1.2); 
+}
+
+
+  /* .social-media-icon{
+    z-index: 15;
+    position: absolute;
+    left: 9rem;
+    top: 70%;
+  }
+  .icon{
+    width: 1.4rem;
+    z-index: 15;
+    margin: 0.3rem;
+  } */
+
+  /* INTRODUCTION SECTION */
+  .intro{
+    background-color:  #F8F9FA;
+    text-align: center;
+    justify-content: center;
+    justify-content: center;
+
+  }
+
+ /* Center the h1 and set its width */
+.intro h1 {
+  font-size: 3rem;
+  width: 600px;
+  margin: 0 auto;
+  text-align: center; 
+  color: rgb(59, 28, 17);
+}
+
+.intro p {
+  text-align: center;
+  width: 1000px;
+  margin: 20px auto;
+}
+
+.row.vh-90 {
+  height: 90vh;
+}
+
+.container-fluid.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.view-btn{
+  border:1px solid rgb(59, 28, 17);
+  color: rgb(59, 28, 17);
+}
+.view-btn:hover{
+  color: rgb(255, 255, 255);
+  background-color: rgb(59, 28, 17);
+}
+/* .section {
+  margin-bottom: 100px; 
+}
+
+.animate__animated.animate__fadeInDown {
+  animation-duration: 1s;
+}
+
+.animate__animated.animate__fadeInUp {
+  animation-duration: 1s;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+
+
+/* ABOUT ME */
+
+.my-img {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
+
+.about h1 {
+  font-size: 3rem;
+  width: 600px;
+  margin: 0 auto;
+  text-align: center; 
+  color: rgb(59, 28, 17);
+}
+
+.the-story{
+  color: rgb(59, 28, 17);
+}
+
+/* Add border lines above and below */
+.border {
+  border-top: 1px solid #a0827a; /* Adjust color as needed */
+  width: 100%;
+  margin: 10px 0; /* Adjust spacing */
+}
+
+/* Style the count-books container */
+.count-books {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* Adjust spacing between items */
+}
+
+/* Style each count-item */
+.count-item .number {
+  font-size: 2.5rem; 
+  font-weight: bold;
+  color: #a0827a;
+}
+
+.count-item .info {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #333; 
+  margin-top: -10px; 
+}
+
+/* Divider between items */
+.divider {
+  border-left: 1px solid #a0827a; 
+  height: 50px; 
+}
+
+  /* Toggle button text switching */
+  .read-more-toggle .expanded {
+    display: none;
+  }
+  .read-more-toggle .collapsed {
+    display: inline;
+  }
+  .read-more-toggle[aria-expanded="true"] .expanded {
+    display: inline;
+  }
+  .read-more-toggle[aria-expanded="true"] .collapsed {
+    display: none;
+  }
+
+
+/* BOOKS SECTION */
+
+.books-img {
+  min-height: 250px;
+  max-height: 400px;
+}
+
+.books h1{
+  width: 600px;
+  margin: 0 auto;
+  text-align: center; 
+  color: rgb(59, 28, 17);
+}
+
+.order-copy-btn {
+  padding: 3px 15px;
+  font-size: 16px;
+  background-color: rgb(59, 28, 17);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.order-copy-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: left 0.5s ease;
+}
+
+.order-copy-btn:hover {
+  background-color: rgb(49, 24, 14);
+}
+
+.order-copy-btn:hover::after {
+  left: 100%;
+}
+
+/* QOUTE SECTION */
+.quote {
+  height: 80vh;
+  background-image: url('/img/blank-notebook.jpg');
+  background-position: center;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  position: relative;
+}
+
+.quote::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Overlay with 50% opacity */
+}
+
+.quote h1 {
+  color: #333; /* Dark text color */
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  text-align: center;
+  z-index: 10;
+}
+
+/* Typewriter Text Styling */
+/* Typewriter Text Styling */
+#typewriter {
+  font-family: 'Arial', sans-serif;
+  font-size: 2rem;
+  border-right: 3px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  width: fit-content; 
+  text-align: center;
+  line-height: 1.5; 
+  max-width: 100%; 
+}
+
+
+/* Cursor Blink Effect */
+@keyframes blinkCursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+#typewriter {
+  animation: blinkCursor 0.7s steps(2) infinite;
+}
+
+
+/* SUBSCRIBE SECTION */
+/* General Styling for the Section */
+.subscribe h1 {
+  color: rgb(59, 28, 17);
+  font-size: 2rem;
+}
+
+/* Input Styling */
+.form-control {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  border-color: rgb(59, 28, 17);
+  box-shadow: none;
+  outline: none;
+}
+
+.form-floating label {
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  color: #666;
+}
+
+.form-floating .form-control:focus ~ label,
+.form-floating .form-control:not(:placeholder-shown) ~ label {
+  transform: translateY(-1.5rem);
+  font-size: 0.9rem;
+  color: rgb(59, 28, 17);
+}
+
+/* Button Styling */
+.btn-outline-dark {
+  color: rgb(59, 28, 17);
+  border-color: rgb(59, 28, 17);
+  border-top: none;
+  border-bottom: none;
+  border-left: 1px solid rgb(59, 28, 17);
+  border-right: 1px solid rgb(59, 28, 17);
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+  background-color: rgba(59, 28, 17, 0.3);
+  color: rgb(59, 28, 17);
+}
+
+/* General Navbar Styling */
+.b-nav{
+  margin: auto 0;
+}
+/* Navbar without background color */
+
+
+/* Right Section Styling */
+
+
+/* Social Media Icons Styling */
+.social-media-icon-mobile{
+  display: none;
+}
+.social-icons {
+  font-size: 10px;
+  width: 10px;
+  transition: color 0.3s ease;
+  gap: 10px;
+}
+.social-icons a:hover {
+  color: rgb(59, 28, 17);
+}
+
+.bottom-icon{
+  width: 20px;
+}
+.bottom-icon:hover{
+  transform: scale(1.2); 
+}
+
+
+
+
+
+  /* FOR SMALLER SCREEN */
+  @media (max-width: 991px) {
+/* Media Queries for Smaller Screens */
+
+
+
+body{
+  overflow-x: hidden;
+}
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+  .hero-r{
+    display: none !important;
+  }
+  .hero-l{
+    width: 100%;
+  }
+
+  /* Navbar Customization */
+  
+  .navbar-toggler {
+    border: none;
+    outline: none;
+  }
+  .navbar-toggler:active{
+    border: none;
+    outline: none;
+  }
+
+  .navbar-toggler:hover{
+    border: none;
+    outline: none;
+  }
+
+  .navbar-toggler-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .navbar-brand,
+  .nav-link {
+    color: #343A40;
+  }
+
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Hero Section */
+  
+ 
+  .hero-l-content h1{
+    width: 70%;
+    font-size: 3rem;
+  }
+
+  .hero-l-content p{
+    width: 70%;
+  }
+  
+  .social-media-icon-mobile{
+    margin-top: 10vh;
+    display: flex;
+    gap: 20px;
+    width: 25px;
+    animation: fadeInUp 3s ease-in-out;
+    }
+    
+  
+  .social-media-icon-mobile .icon {
+    width: 25px;
+    height: 25px;
+    
+  }
+
+  .social-media-icon-mobile .icon:hover {
+    transform: scale(1.2); 
+  }
+
+  /* INTRODUCTION SECTION */
+
+.intro h1 {
+  width: 100%;
+}
+
+.intro p {
+  width: 90%;
+}
+
+  /* ABOUT SECTION */
+  .count-books {
+    flex-direction: column;
+    gap: 20px; /* Adjust spacing between items */
+  }
+
+  .divider {
+    border-left: none;
+    border-top: 1px solid #a0827a; /* Optional: Change color and spacing */
+    width: 50px;
+  }
+
+  .social-icons a {
+    font-size: 1rem;
+    border: none;
+    color: #F8F9FA;
+  }
+}
+
+
+

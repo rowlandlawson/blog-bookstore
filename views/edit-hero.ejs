@@ -1,0 +1,32 @@
+<!-- edit-intro.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Introduction</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2>Edit Hero Section</h2>
+    <form action="/hero?_method=PATCH" method="POST">
+
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" name="title" value="<%= hero.title %>" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="subtitle" class="form-label">Introduction Content</label>
+        <textarea class="form-control" id="subtitle" name="subtitle" rows="5" required><%= hero.subtitle %></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+    
+    
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/animation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/IntersectionObserver/0.9.1/intersection-observer.js"></script>
+</head>
+
+
+<body>
+  <header>
+    <div class="container-fluid vh-100 hero">
+      <div class="row">
+        <div class="container">
+          <div class="row">
+            <!-- Left Content -->
+            <div class="col-12 col-md-8 hero-l">
+              <nav class="navbar navbar-expand-lg m-md-5">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Navbar</a>
+                  <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      <a class="nav-link" href="#about">About</a>
+                      <a class="nav-link" href="#books">Books</a>
+                      <a class="nav-link" href="#blogs">Blogs</a>
+                      <a class="nav-link" href="#contacts">Contact</a>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+              <div class="m-5 hero-l-content text-start">
+                <h1 class="animate__animated animate__fadeInLeft"><%= hero.title %></h1>
+                <p class="animate__animated animate__fadeInUp">
+                  <%= hero.subtitle %>
+                </p>
+                <button type="button" class="btn hero-btn animate__animated animate__fadeInUp">Read Sample Now</button>
+                <div class="social-media-icon-mobile justify-content-start ">
+                  <a href="#"><img src="img/facebook (1).png" class="icon" alt="Facebook"></a>
+                  <a href="#"><img src="img/youtube (1).png" class="icon" alt="YouTube"></a>
+                  <a href="#"><img src="img/instagram (1).png" class="icon" alt="Instagram"></a>
+                  <a href="#"><img src="img/gmail.png" class="icon" alt="Gmail"></a>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Right Content-->
+            <div class="col-md-4 hero-r slide d-none d-md-block">
+              <div class="social-media-icon justify-content-end align-items-center g-5 m-5">
+                <a href="#"><img src="img/facebook (1).png" class="icon" alt="Facebook"></a>
+                <a href="#"><img src="img/youtube (1).png" class="icon" alt="YouTube"></a>
+                <a href="#"><img src="img/instagram (1).png" class="icon" alt="Instagram"></a>
+                <a href="#"><img src="img/gmail.png" class="icon" alt="Gmail"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  
+
+    <!-- INTRODUCTION SECTION -->
+    <section>
+        <div class="container-fluid intro">
+          <div class="row vh-90"></div>
+          <div class="m-md-5">
+            <!-- Heading: Making it responsive -->
+            <h1 class="display-4 text-center text-md-center animate__animated animate__fadeInDown"> Introduction </h1>
+            
+            <!-- Paragraph: Adjust text size on small screens -->
+            <p class="lead text-center text-md-center animate__animated animate__fadeInUp">
+              <%= intro.content %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+      <!-- END OF INTRODUCTION SECTION -->
+
+     <!-- ABOUT SECTION -->
+    <section id="about" class=" py-5">
+      <div class="container ">
+        <div class="row mt-5"> <!-- align-items-stretch ensures equal height -->
+          <!-- <h1 class="text-center mb-4">About</h1> -->
+    <!-- Column with Image -->
+    <div class="col-md-6 col-sm-12 d-flex align-items-center">
+      <img src="img/pexels-olly-3769021.jpg" class="my-img " alt="author's image">
+    </div>
+  
+    <!-- Column with Text -->
+    <div class="col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center text-center text-md-start">
+      <div class="container">
+        <p class="text-start text-center text-md-start the-story">The Story Of</p>
+        <h1 class="mb-3"><%= about.authorsName %></h1>
+        <p><%= about.content %>></p>
+      </div>
+      
+  
+      <!-- Counter Section -->
+      <div class="border mt-4 w-100"></div>
+  
+      <div class="Counter d-flex justify-content-center align-items-center flex-wrap mt-3">
+        <div class="count-item text-center m-3">
+          <p class="number" data-target="<%= about.stats.booksPublished %>">0</p>
+          <p class="info" >Books Published</p>
+        </div>
+  
+        <div class="count-item text-center m-3">
+          <p class="number" data-target="<%= about.stats.blogsPosted %>" >0</p>
+          <p class="info">Articles</p>
+        </div>
+      </div>
+  
+      <div class="border mt-2 w-100"></div>
+    </div>
+  </div>  
+  </div>
+    </section>
+     <!-- END OF ABOUT SECTION -->
+
+<!-- BLOG POST SECTION -->
+<section id="blogs" class="container py-5">
+  <div class="row books">
+    <h1>Recent Blogs</h1>
+    <div class="mt-5">
+      <% if (posts.length > 0) { %>
+        <% 
+          const today = new Date();
+          const isNew = function(date) {
+            const diffTime = Math.abs(today - new Date(date));
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            return diffDays <= 7;
+          };
+
+          const sortedPosts = posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+          const latestPosts = sortedPosts.slice(0, 3);
+        %>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <% latestPosts.forEach(function(post) { %>
+            <div class="col">
+              <div class="card h-100">
+                <% if (post.image) { %>
+                  <img src="<%= post.image %>" class="card-img-top" alt="Blog Image" style="height: 320px; width: 100%;" >
+                <% } %>
+                
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <%= post.title %>
+                    <% if (isNew(post.createdAt)) { %>
+                      <span class="badge bg-success ms-2">New</span>
+                    <% } %>
+                  </h5>
+                  <p class="card-text">
+                    <% if (post.content.length > 150) { %>
+                      <%= post.content.substring(0, 150) %>...
+                    <% } else { %>
+                      <%= post.content %>
+                    <% } %>
+                  </p>
+                </div>
+                <div class="card-footer bg-transparent border-top-0">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-body-secondary">
+                      <%= new Date(post.createdAt).toLocaleDateString() %>
+                    </small>
+                    <a href="/blogs?postId=<%= post.id %>" class="btn btn-sm view-btn3">
+                      Read More
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+
+        <% if (posts.length > 3) { %>
+          <div class="text-center mt-4">
+            <a href="/blogs" class="btn view-btn">View All Blogs</a>
+          </div>
+        <% } %>
+
+      <% } else { %>
+        <p>No blogs found.</p>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<!-- END OF BLOG POST SECTION -->
+
+<!-- BOOKS SECTION -->
+<section id="books">
+  <div class="container books py-5">
+    <div class="row books">
+      <h1 class="text-center mb-4">Best Selling Books</h1>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        <% if (books && books.length > 0) { %>
+          <% 
+            const sortedBooks = books.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+            const latestBooks = sortedBooks.slice(0, 6);
+          %>
+
+          <% latestBooks.forEach((bookItem) => { %>
+            <div class="col">
+              <div class="card h-100">
+                <% if (bookItem.coverImage) { %>
+                  <img src="<%= bookItem.coverImage %>" class="card-img-top books-img " style="height: 320px; width: 100%;" alt="<%= bookItem.title %>">
+                <% } %>
+                <div class="card-body">
+                  <h5 class="card-title"><%= bookItem.title %></h5>
+                  <p class="card-text">
+                    <%= bookItem.description.length > 120 ? bookItem.description.substring(0, 120) + "..." : bookItem.description %>
+                  </p>
+                  <a href="/books?bookId/<%= bookItem.id %>" class="btn btn-sm  mt-2">Read More</a>
+                </div>
+                <div class="card-footer d-flex justify-content-center align-items-center">
+                  <small class="text-muted">
+                    <button class="order-copy-btn" onclick="window.location.href='/books/<%= bookItem._id %>';">
+                      Order Your Copy - ₦<%= bookItem.price %>
+                    </button>
+                  </small>
+                </div>
+              </div>
+            </div>
+          <% }) %>
+
+          <% if (books.length > 6) { %>
+            <div class="mt-4 mx-auto" style="width: fit-content;">
+              <a href="/books" class="btn view-btn">View All Books</a>
+            </div>
+          <% } %>
+
+        <% } else { %>
+          <div class="col-12">
+            <p class="text-center">No books available</p>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- END OF BOOKS SECTION -->
+
+
+<!-- QUOTE SECTION -->
+<!-- Hidden quotes data container and typewriter element -->
+<!-- <div id="quotes-data" style="display: none;">
+  
+</div> -->
+
+<!-- Your existing quote section -->
+<!-- <section class="container-fluid">
+  <div class="row mt-5 vh-100">
+    <div class="col-12 d-flex justify-content-center align-items-center quote">
+      <h1 id="typewriter" class="text-center text-white"></h1>
+    </div>
+  </div> 
+</section> -->
+
+ <!-- END OF QUOTE SECTION -->
+
+
+<!-- SPECIAL COPY -->
+ <div class="container">
+<div class="row min-vh-100 align-items-center">
+  <!-- Column with Text -->
+  <div class="col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-center text-center text-md-start p-4">
+    <div class="container">
+      <p class="text-start text-center text-md-start">Dont miss it</p>
+      <h1>Get a Signed Copy – A Unique Experience</h1>
+      <p>
+        In the heart of every story lies a journey—one of discovery, emotion, and connection. 
+        [Your Book Title] is more than just words on a page; it's a reflection of experiences, 
+        reflections, and insights gathered over time. Each copy is a testament to dedication, 
+        creativity, and passion, crafted with meticulous care to offer readers an immersive and 
+        unforgettable reading experience.
+      </p>
+    </div>
+    <div class="border mt-4 w-100"></div>
+    <div class="border mt-2 w-100"></div>
+  </div>
+
+  <!-- Column with Image -->
+  <div class="col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
+    <img src="img/pexels-olly-3769021.jpg" class="my-img img-fluid" alt="author's image">
+  </div>
+</div>
+
+</div> 
+     
+<!-- SUBSCRIBERS SECTION -->
+
+
+<div class="row vh-90 justify-content-center">
+  <div class="subscribe text-center">
+    <h1 class="mb-4">Get all the latest news and info sent to your inbox.</h1>
+
+    <!-- Email Input -->
+    <div class="d-flex justify-content-center mb-3">
+      <form class="form-floating w-100" style="max-width: 400px;">
+        <input 
+          type="email" 
+          class="form-control" 
+          id="floatingInputValue" 
+          placeholder="Your Email Address"
+        >
+        <label for="floatingInputValue">Your Email Address</label>
+      </form>
+    </div>
+
+    <!-- Subscribe Button -->
+    <button class="btn btn-outline-dark d-inline-flex align-items-center gap-2">
+      Subscribe
+    </button>
+  </div>
+</div>
+
+
+
+<!-- <div class="row min-vh-100 align-items-center">
+  <div class="subscribe text-center">
+    <h1 class="mb-4">Get all the latest news and info sent to your inbox.</h1> -->
+
+    <!-- Email Input -->
+    <!-- <div class="d-flex justify-content-center mb-3">
+      <form class="form-floating w-100" style="max-width: 400px;">
+        <input 
+          type="email" 
+          class="form-control" 
+          id="floatingInputValue" 
+          placeholder="Your Email Address"
+        >
+        <label for="floatingInputValue">Your Email Address</label>
+      </form>
+    </div> -->
+
+    <!-- Subscribe Button -->
+    <!-- <button class="btn btn-outline-dark d-inline-flex align-items-center gap-2">
+      Subscribe <i class="fas fa-arrow-right"></i>
+    </button>
+  </div>
+</div> -->
+
+
+
+
+<footer id="contacts" class="text-center text-dark py-3 mb-5 vh-90">
+  <div class="container d-flex justify-content-center align-items-center g-5">
+    <div class="mx-5">
+      <p class="mb-0">Copyright © 2025 Bestselling Author</p>
+    </div>
+    <div class="social-icons d-flex justify-content-center justify-content-md-center mx-5">
+      <a href="#"><img src="img/facebook (1).png" class="bottom-icon" alt="Facebook"></a>
+      <a href="#"><img src="img/youtube (1).png" class="bottom-icon" alt="YouTube"></a>
+      <a href="#"><img src="img/instagram (1).png" class="bottom-icon" alt="Instagram"></a>
+      <a href="#"><img src="img/gmail.png" class="bottom-icon" alt="Gmail"></a>
+    </div>
+  </div>
+
+  
+</footer>
+
+      <script src="styles/main.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+     
+      
+    </body>
+</html>

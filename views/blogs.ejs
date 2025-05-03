@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Blog Posts</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Professional Blog Styling */
+    .blog-card {
+      margin-bottom: 2rem;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    /* Card image - full width without cutoff */
+    .card-img-top {
+      width: 100%;
+      height: auto;
+      max-height: 100v;
+      object-fit: contain;
+      background-color: #f8f9fa;
+      border-radius: 8px 8px 0 0;
+    }
+    
+    .card-body {
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .card-text {
+      flex-grow: 1;
+      margin-bottom: 1rem;
+    }
+    
+    /* Read More Button Styling */
+    .read-more-btn {
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: rgb(59, 28, 17);
+      transition: color 0.2s ease;
+    }
+    
+    .read-more-btn:hover {
+      color: rgb(43, 29, 20);
+      text-decoration: underline;
+    }
+    
+    /* Date styling */
+    .post-date {
+      color: #6c757d;
+      font-size: 0.875rem;
+    }
+    
+    /* New badge */
+    .new-badge {
+      font-size: 0.75rem;
+      padding: 0.35em 0.65em;
+    }
+    
+    /* Blog layout improvements */
+    .blog-header {
+      margin-bottom: 3rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .blog-content {
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: #333;
+    }
+    
+    /* Modal image styling - full width without cutoff */
+    .modal-img-container {
+      width: 100%;
+      max-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f8f9fa;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    
+    .modal-img {
+      width: 100%;
+      height: auto;
+      max-height: 60vh;
+      object-fit: contain;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .card-body {
+        padding: 1.2rem;
+      }
+      .card-img-top {
+        max-height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <header class="blog-header text-center">
+      <h1 class="display-4 mb-3">Our Blog</h1>
+      <p class="lead text-muted">Insights, stories, and ideas from our team</p>
+    </header>
+
+    <% if (posts.length > 0) { %>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <% 
+          const today = new Date();
+          const isNew = (date) => {
+            const diffTime = Math.abs(today - new Date(date));
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            return diffDays <= 7;
+          };
+
+          const sortedPosts = posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        %>
+
+        <% sortedPosts.forEach((post, index) => { %>
+          <div class="col">
+            <div class="card blog-card h-100">
+              <% if (post.image) { %>
+                <img src="<%= post.image %>" class="card-img-top" alt="<%= post.title %>" loading="lazy">
+              <% } %>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%= post.title %>
+                  <% if (isNew(post.createdAt)) { %>
+                    <span class="badge bg-success ms-2 new-badge">New</span>
+                  <% } %>
+                </h5>
+
+                <div class="card-text blog-content">
+                  <%= post.content.length > 150 ? post.content.substring(0, 150) + '...' : post.content %>
+                </div>
+
+                <div class="mt-auto">
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                    <small class="post-date">
+                      <%= new Date(post.createdAt).toLocaleDateString('en-US', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                      }) %>
+                    </small>
+                    <button class="read-more-btn" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#blogModal<%= index %>">
+                      Read More →
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Modal for each blog post -->
+          <div class="modal fade" id="blogModal<%= index %>" data-post-id="<%= post.id %>" tabindex="-1" aria-labelledby="blogModalLabel<%= index %>" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="blogModalLabel<%= index %>"><%= post.title %></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <% if (post.image) { %>
+                    <div class="modal-img-container">
+                      <img src="<%= post.image %>" class="modal-img" alt="<%= post.title %>">
+                    </div>
+                  <% } %>
+                  <div class="blog-content">
+                    <%= post.content %>
+                  </div>
+                  <div class="mt-4 text-muted">
+                    <small>Posted on: <%= new Date(post.createdAt).toLocaleDateString('en-US', { 
+                      year: 'numeric', 
+                      month: 'long', 
+                      day: 'numeric',
+                      hour: '2-digit',
+                      minute: '2-digit'
+                    }) %></small>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } else { %>
+      <div class="alert alert-info text-center">No blog posts yet. Check back soon!</div>
+    <% } %>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- 🔽 Auto-open modal if postId is in query -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const postId = urlParams.get('postId');
+      if (postId) {
+        const modal = document.querySelector(`.modal[data-post-id="${postId}"]`);
+        if (modal) {
+          const bsModal = new bootstrap.Modal(modal);
+          bsModal.show();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
