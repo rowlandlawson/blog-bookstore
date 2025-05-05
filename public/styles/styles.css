@@ -610,13 +610,13 @@ body{
   .hero-l-content h1{
     width: 90%;
     text-align: center;
-    font-size: 10vw !important;
+    font-size: 9vw !important;
   }
 
   .hero-l-content p{
     width: 100% !important;
     text-align: center;
-    font-size: 7vw !important;
+    font-size: 5vw !important;
   }
 
   .hero-btn{
